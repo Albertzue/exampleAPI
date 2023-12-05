@@ -25,7 +25,6 @@ jobs:
     - name: GetInfo
       shell: bash
       run: |  
-            cd ..
             ls -a
             pwd
     - name: Build and push
