@@ -28,7 +28,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v4.1.1
       with:
-         context: /home/runner/work/exampleAPI/exampleAPI
-         file: /home/runner/work/exampleAPI/exampleAPI/Dockerfile
+         context: .
+         file: ./exampleAPI/Dockerfile
          push: true
          tags: zhuyunjie0207/demo_web_api:latest
