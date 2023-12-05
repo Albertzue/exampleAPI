@@ -22,4 +22,4 @@ jobs:
          context: .
          file: ./exampleAPI/Dockerfile
          push: true
-         tags: zhuyunjie0207/demo_web_api:$(date)
+         tags: zhuyunjie0207/demo_web_api:latest
