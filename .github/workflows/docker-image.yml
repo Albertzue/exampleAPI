@@ -20,6 +20,7 @@ jobs:
       shell: bash
       run: |  
             ls 
+            pwd
     - name: Build and push
       uses: docker/build-push-action@v4.1.1
       with:
