@@ -32,6 +32,8 @@ jobs:
         shell: bash
         run: |
               cd manifests
+              git config --global user.email "test@carrier.com"
+              git config --global user.name "test"
               git commit -am "auto update tag"
               git push
    build_and_push:
