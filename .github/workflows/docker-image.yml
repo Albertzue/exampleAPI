@@ -7,7 +7,8 @@ on:
        description: image tag
        required: true
        default: latest
-  
+env:
+  tag: zhuyunjie0207/demo_web_api:${{ github.event.inputs.tag }}
 jobs:
    pull_request:
       runs-on: ubuntu-latest
@@ -21,12 +22,12 @@ jobs:
           sparse-checkout: |
             values.yaml
           sparse-checkout-cone-mode: false
-      - name: GetInfo
+      - name: update_image
         shell: bash
         run: |  
-               ls
-               cd ..
-               ls 
+              cd manifests
+              ls
+              sed 's/zhuyunjie0207*$/${{ env.tag }}/' 
    build_and_push:
     runs-on: ubuntu-latest
     steps:
@@ -52,7 +53,7 @@ jobs:
          context: .
          file: ./exampleAPI/Dockerfile
          push: true
-         tags: zhuyunjie0207/demo_web_api:${{ github.event.inputs.tag }}
+         tags:  ${{ env.tag }}
          
    
   
