@@ -23,8 +23,8 @@ jobs:
               sed -i 's/tag\: "[a-z0-9]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               ls -a
               cat values.yaml
-              git config --global user.email "test@carrier.com"
-              git config --global user.name "exampleAPI action"
+              git config --global user.email "373695228@qq.com"
+              git config --global user.name "Yunjie-Zhu"
               git commit -i values.yaml -m "auto update tag"
               git push
 
