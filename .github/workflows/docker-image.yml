@@ -15,6 +15,13 @@ jobs:
       steps:
       - name: checkout
         uses: actions/checkout@v4.1.1
+        with: 
+          name: Albertzue/exampleAPI_manifests     
+      - name: GetInfo
+        shell: bash
+        run: |  
+               ls 
+               pwd
    build_and_push:
     runs-on: ubuntu-latest
     steps:
