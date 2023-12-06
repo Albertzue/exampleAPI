@@ -27,7 +27,7 @@ jobs:
         run: |  
               cd manifests
               ls
-              sed 's/\:*$/\:${{ github.event.inputs.tag }}/2' values.yaml 
+              sed 's/tag\:*$/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               cat values.yaml
    build_and_push:
     runs-on: ubuntu-latest
