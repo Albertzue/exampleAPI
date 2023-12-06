@@ -21,14 +21,11 @@ jobs:
               cd exampleAPI_manifests
               sed 's/tag\: "[a-z]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               cat values.yaml
-      - name: git_commit
-        shell: bash
-        run: |
-              cd exampleAPI_manifests
               git config --global user.email "test@carrier.com"
               git config --global user.name "test"
               git commit -am "auto update tag"
               git push
+
    build_and_push:
     runs-on: ubuntu-latest
     steps:
