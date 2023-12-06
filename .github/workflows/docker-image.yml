@@ -16,12 +16,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4.1.1
         with: 
-          name: Albertzue/exampleAPI_manifests     
+          repository: Albertzue/exampleAPI_manifests     
       - name: GetInfo
         shell: bash
         run: |  
+               cd ..
                ls 
-               pwd
    build_and_push:
     runs-on: ubuntu-latest
     steps:
