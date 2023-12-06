@@ -20,7 +20,7 @@ jobs:
               git clone https://github.com/Albertzue/exampleAPI_manifests.git
               cd exampleAPI_manifests
               cat values.yaml
-              sed 's/tag\: "[a-z0-9]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
+              sed -i 's/tag\: "[a-z0-9]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               ls -a
               cat values.yaml
               git config --global user.email "test@carrier.com"
