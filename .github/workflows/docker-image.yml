@@ -10,7 +10,7 @@ on:
 env:
   tag: zhuyunjie0207/demo_web_api:${{ github.event.inputs.tag }}
 jobs:
-   pull_request:
+   update_manifest:
       runs-on: ubuntu-latest
       needs: build_and_push
       steps:
