@@ -27,7 +27,7 @@ jobs:
         run: |  
               cd manifests
               ls
-              sed 's/zhuyunjie0207*$/${{ env.tag }}/' 
+              sed 's:/zhuyunjie0207*$:/${{ env.tag }}:g' 
    build_and_push:
     runs-on: ubuntu-latest
     steps:
