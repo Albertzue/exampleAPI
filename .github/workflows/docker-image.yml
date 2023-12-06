@@ -26,12 +26,12 @@ jobs:
         shell: bash
         run: |  
               cd manifests
-              ls
-              sed 's/tag\:*$/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
+              sed 's/tag\: "[a-z]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               cat values.yaml
       - name: git_commit
         shell: bash
         run: |
+              cd manifests
               git commit -am "auto update tag"
               git push
    build_and_push:
