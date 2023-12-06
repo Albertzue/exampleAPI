@@ -16,10 +16,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4.1.1
         with: 
-          repository: Albertzue/exampleAPI_manifests     
+          repository: Albertzue/exampleAPI_manifests  
+          path: manifests
+          sparse-checkout: |
+            values.yaml
+          sparse-checkout-cone-mode: false
       - name: GetInfo
         shell: bash
         run: |  
+               cd
                cd ..
                ls 
    build_and_push:
