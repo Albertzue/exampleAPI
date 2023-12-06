@@ -17,7 +17,7 @@ jobs:
       - name: update_tag
         shell: bash
         run: |  
-              git clone https://github.com/Albertzue/exampleAPI_manifests.git
+              git clone https://Albertzue:${{ secrets.DEV_TOKEN }}@github.com/Albertzue/exampleAPI_manifests.git
               cd exampleAPI_manifests
               sed -i 's/tag\: "[a-z0-9]*"/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               git config --global user.email "Yunjie.Zhu@carrier.com"
