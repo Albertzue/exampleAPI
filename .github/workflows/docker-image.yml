@@ -22,13 +22,18 @@ jobs:
           sparse-checkout: |
             values.yaml
           sparse-checkout-cone-mode: false
-      - name: update_image
+      - name: update_tag
         shell: bash
         run: |  
               cd manifests
               ls
               sed 's/tag\:*$/tag\: ${{ github.event.inputs.tag }}/' values.yaml 
               cat values.yaml
+      - name: git_commit
+        shell: bash
+        run: |
+              git commit -am "auto update tag"
+              git push
    build_and_push:
     runs-on: ubuntu-latest
     steps:
