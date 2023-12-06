@@ -24,7 +24,7 @@ jobs:
       - name: GetInfo
         shell: bash
         run: |  
-               cd
+               ls
                cd ..
                ls 
    build_and_push:
