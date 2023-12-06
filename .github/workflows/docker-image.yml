@@ -19,9 +19,7 @@ jobs:
         with: 
           repository: Albertzue/exampleAPI_manifests  
           path: manifests
-          sparse-checkout: |
-            values.yaml
-          sparse-checkout-cone-mode: false
+
       - name: update_tag
         shell: bash
         run: |  
