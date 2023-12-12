@@ -9,7 +9,7 @@ namespace exampleAPI.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            var version = "2023/12/08";
+            var version = "2023/12/12";
             return Content(version);
         }
     }
